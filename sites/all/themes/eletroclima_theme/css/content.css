@@ -1,0 +1,125 @@
+body {
+  background: none repeat scroll 0 0 #0071B7;
+  border: medium none;
+  font: 12px Verdana,Arial,Helvetica,sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+textarea {
+    resize: none;
+}
+:focus, *:active, button, input {
+  outline: 0 none;
+}
+div.panels-flexible-row-inside {
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+}
+div.panel-flexible {
+  overflow: hidden;
+}
+div.content-row{
+  background-color: #FFF;
+}
+div.header-row {
+	height: 40px;
+	position: relative;
+	z-index: 2;
+  background-color: #75888E;
+  border-bottom: 1px solid #FFF;
+}
+div.menu-row {
+  background-color: #0071B7;
+  height:16px;
+}
+div.content-row {
+    padding-bottom: 50px;
+}
+div.marquee-row {
+  background-color: #FFF;
+  height: 360px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+div.footer-row {
+  background-color: #75888E;
+  height: 115px;
+  overflow: hidden;
+}
+
+
+
+/********/
+
+div.nivoSlider img {
+    height: 360px !important;
+    width: 960px !important;
+}
+div.nivo-controlNav {
+    bottom: -10px;
+    padding: 0;
+    position: absolute;
+    right: 18px;
+    z-index: 9999;
+}
+div.marquee-row div.theme-default div.nivo-controlNav a.nivo-control {
+    background: url("../images/bullets-pager.png") no-repeat scroll 0 0 transparent !important;
+}
+div.marquee-row div.theme-default div.nivo-controlNav a.nivo-control.active {
+    background-position: 0 -22px !important;
+}
+div.nivo-caption {
+    display: none !important;
+}
+div.pane-page-logo {
+  left: 90px;
+  position: absolute;
+  top: 0;
+  background: url("../images/faixa.png") no-repeat scroll 0 bottom #fff;
+  width: 302px;
+  height: 429px;
+  z-index: 9999;
+}
+a#logo {
+  float: left;
+  margin: 50px 22px;
+}
+div.header-row div.pane-system-main-menu {
+  position: absolute;
+  top: 0;
+}
+div.header-row div.pane-system-main-menu ul {
+  padding: 0;
+  margin: 0;
+}
+div.header-row div.pane-system-main-menu ul li {
+  float: left;
+  font-size: 15px;
+  list-style: none outside none;
+  padding: 15px 37px 11px;
+  border-right: 1px solid #FFF;
+  margin: 0;
+  background: #75888E;
+}
+div.header-row div.pane-system-main-menu ul li.first {
+  padding: 15px 23px 11px;
+  margin-right: 299px;
+}
+div.header-row div.pane-system-main-menu ul li.last {
+  border-right: none;
+}
+div.header-row div.pane-system-main-menu ul li a {
+  text-decoration: none;
+  color: #FFF;
+}
+div.header-row div.pane-system-main-menu ul li a.active{
+  background: url("../images/sublinhado-menu.png") no-repeat scroll 6px bottom transparent;
+  padding-bottom: 21px;
+}
+div.header-row div.pane-system-main-menu ul li.first a.active{
+  background: none;
+}

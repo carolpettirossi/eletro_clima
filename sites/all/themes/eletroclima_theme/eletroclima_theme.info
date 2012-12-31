@@ -1,0 +1,6 @@
+name = Eletroclima Theme
+description = Desktop theme for Eletroclima Website
+core = 7.x
+engine = phptemplate
+
+stylesheets[screen][] = css/content.css
