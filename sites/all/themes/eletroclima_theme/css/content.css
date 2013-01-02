@@ -1,16 +1,26 @@
 body {
   background: none repeat scroll 0 0 #0071B7;
   border: medium none;
-  font: 12px Verdana,Arial,Helvetica,sans-serif;
+  font: 12px Arial, Verdana, Helvetica,sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
+  color: #8C8C8C;
 }
 textarea {
     resize: none;
 }
 :focus, *:active, button, input {
   outline: 0 none;
+}
+
+a {
+  color: #0187D0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0946E9;
 }
 div.panels-flexible-row-inside {
   margin: 0 auto;
@@ -118,8 +128,47 @@ div.header-row div.pane-system-main-menu ul li a {
 }
 div.header-row div.pane-system-main-menu ul li a.active{
   background: url("../images/sublinhado-menu.png") no-repeat scroll 6px bottom transparent;
-  padding-bottom: 21px;
+  padding-bottom: 23px;
 }
 div.header-row div.pane-system-main-menu ul li.first a.active{
   background: none;
+}
+
+div.content-row div.block-servicos ul li {
+  background: url("../images/ondinha.png") no-repeat scroll 0 8px transparent;
+  color: #5A5A5A;
+  font-size: 22px;
+  letter-spacing: 1px;
+  line-height: 26px;
+  list-style: none outside none;
+  margin-bottom: 9px;
+  padding: 0 0 0 47px;
+}
+
+div.content-row div.right-column {
+  width: 340px;
+  margin-top: 47px;
+}
+
+div.content-row div.left-column {
+  width: 400px;
+  margin: 5px 49px 0 90px;
+}
+
+div.content-row div.bottom-column {
+  width: 100%;
+  clear: both;
+}
+
+div.content-row h2 {
+  color: #549CB5;
+  font-size: 16px;
+}
+
+div.block-quem-somos h2 {
+  background: url("../images/short_shadow.png") no-repeat scroll 0 29px transparent;
+  padding-bottom: 24px;
+}
+div.block-quem-somos p {
+  text-align: justify;
 }
