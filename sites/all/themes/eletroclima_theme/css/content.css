@@ -10,6 +10,9 @@ body {
 textarea {
     resize: none;
 }
+div.grippie{
+  display: none;
+}
 :focus, *:active, button, input {
   outline: 0 none;
 }
@@ -77,10 +80,11 @@ div.nivo-controlNav {
     z-index: 9999;
 }
 div.marquee-row div.theme-default div.nivo-controlNav a.nivo-control {
-    background: url("../images/bullets-pager.png") no-repeat scroll 0 0 transparent !important;
+    background: url("../images/bullets.png") no-repeat scroll 0 0 transparent !important;
+    width: 15px;
 }
 div.marquee-row div.theme-default div.nivo-controlNav a.nivo-control.active {
-    background-position: 0 -22px !important;
+    background-position: -19px 0px !important;
 }
 div.nivo-caption {
     display: none !important;
@@ -108,16 +112,20 @@ div.header-row div.pane-system-main-menu ul {
 }
 div.header-row div.pane-system-main-menu ul li {
   float: left;
-  font-size: 15px;
+  font-size: 17px;
   list-style: none outside none;
-  padding: 15px 37px 11px;
+  padding: 13px 37px 11px;
   border-right: 1px solid #FFF;
   margin: 0;
   background: #75888E;
+  font-family: Tahoma;
 }
 div.header-row div.pane-system-main-menu ul li.first {
-  padding: 15px 23px 11px;
+  padding: 13px 23px 11px;
   margin-right: 299px;
+}
+body.front div.header-row div.pane-system-main-menu ul li.first {
+  padding: 13px 14px 11px;
 }
 div.header-row div.pane-system-main-menu ul li.last {
   border-right: none;
@@ -128,12 +136,15 @@ div.header-row div.pane-system-main-menu ul li a {
 }
 div.header-row div.pane-system-main-menu ul li a.active{
   background: url("../images/sublinhado-menu.png") no-repeat scroll 6px bottom transparent;
-  padding-bottom: 23px;
+  padding-bottom: 21px;
 }
 div.header-row div.pane-system-main-menu ul li.first a.active{
-  background: none;
+  padding: 0 10px 21px;
 }
-
+div.content-row div.block-servicos {
+  position: relative;
+  padding-bottom: 46px;
+}
 div.content-row div.block-servicos ul li {
   background: url("../images/ondinha.png") no-repeat scroll 0 8px transparent;
   color: #5A5A5A;
@@ -164,11 +175,304 @@ div.content-row h2 {
   color: #549CB5;
   font-size: 16px;
 }
-
+div.block-quem-somos {
+  position: relative;
+  padding-bottom: 30px;
+}
 div.block-quem-somos h2 {
   background: url("../images/short_shadow.png") no-repeat scroll 0 29px transparent;
   padding-bottom: 24px;
 }
 div.block-quem-somos p {
   text-align: justify;
+}
+
+div.pane-newsletter-newsletter-subscribe {
+  width: 432px;
+  height: 25px;
+  margin: 15px auto;
+  position: relative;
+}
+
+div.pane-newsletter-newsletter-subscribe div.prefix {
+  font-size: 0;
+  height: 20px;
+  width: 98px;
+  background: url("../images/news_label.png") no-repeat scroll 0 0 transparent;
+  float: left;
+  margin-right: 10px;
+}
+
+div.pane-newsletter-newsletter-subscribe form {
+  float: left;
+}
+
+div.pane-newsletter-newsletter-subscribe form div.form-item-email {
+  margin: 0;
+  padding: 0;
+}
+
+div.pane-newsletter-newsletter-subscribe form input.form-text {
+  margin: 0;
+  width: 268px;
+}
+
+div.pane-newsletter-newsletter-subscribe form div#subscribe {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+div.pane-newsletter-newsletter-subscribe form input.form-submit{
+  border: 0;
+  font-size: 0;
+  width: 40px;
+  height: 20px;
+  background: url("../images/bt_ok.png") no-repeat scroll 0 0 transparent;
+}
+
+a.veja-mais {
+  position: absolute;
+  right:0;
+  bottom: 0;
+  font-size: 15px;
+}
+
+a.veja-mais span {
+  color: #000;
+  font-size: 16px;
+}
+
+div.footer-row {
+  color: #EEE;
+  text-align: center;
+  padding: 20px 0 0;
+}
+div.footer-row a {
+  color:#EEE;
+}
+div.footer-row div.pane-system-main-menu{
+  margin: 0 auto;
+  width: 309px;
+}
+div.footer-row div.pane-system-main-menu ul  {
+  margin:0;
+  padding:0;
+}
+div.footer-row div.pane-system-main-menu ul li {
+  display: inline-block;
+  list-style: none;
+  border-right: 1px solid #EEE;
+}
+div.footer-row div.pane-system-main-menu ul li.last {
+  border:0;
+}
+div.footer-row div.pane-system-main-menu ul li a {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #EEE;
+}
+
+div.footer-row div.pane-system-main-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+h2.pane-title {
+  padding-bottom: 20px;
+  background: url("../images/large_shadow.png") no-repeat scroll 0 bottom transparent;
+  margin-top: 30px;
+  
+}
+
+a#btn_back {
+  background-color: #0071B7;
+  bottom: 16px;
+  color: #FFFFFF;
+  font-size: 11px;
+  padding: 10px 40px;
+  position: absolute;
+  right: 0;
+}
+
+div.empresa-img {
+  float: left;
+  margin: -2px 10px 0 0;
+}
+
+ul.servicos-content {
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+
+ul.servicos-content li {
+  background: url("../images/ondinha.png") no-repeat scroll 0 8px transparent;
+  color: #000;
+  letter-spacing: 1px;
+  line-height: 23px;
+  list-style: none outside none;
+  margin-bottom: 9px;
+  padding: 0 0 0 47px;
+  margin-bottom: 40px;
+}
+
+ul.servicos-content li  h3 {
+  font-size: 22px;
+  color: #5A5A5A;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+ul.servicos-content li p {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+}
+form#webform-client-form-2 {
+  position: relative;
+  padding-bottom: 50px;
+}
+form#webform-client-form-2  label {
+  font-weight: normal;
+  font-size: 13px;
+}
+div#webform-component-field-mensagem {
+  position: absolute;
+  right: 100px;
+  top: -11px;
+}
+
+div#webform-component-field-mensagem textarea {
+  width: 420px;
+  border: 1px solid #8C8C8C;
+  resize: none;
+  height: 200px;
+}
+
+div.webform-component-textfield input,
+div.webform-component-email input{
+  width: 390px;
+  border: 1px solid #8C8C8C;
+  height: 25px;
+}
+
+form#webform-client-form-2 input#edit-submit {
+  background-color: #0071B7;
+  bottom: 0;
+  color: #FFFFFF;
+  font-size: 11px;
+  padding: 10px 40px;
+  position: absolute;
+  right: 100px;
+  border: 0;
+}
+
+body.node-type-webform a#btn_back {
+  right: 225px;
+  bottom: 14px;
+}
+
+div.brands ul li {
+  list-style: none;
+}
+
+div.jcarousel-next, div.jcarousel-prev {
+  width: 19px;
+  height: 38px;
+  cursor: pointer;
+}
+
+div.jcarousel-prev {
+ background: url("../images/arrow-left.png") no-repeat scroll 0 0 #FFF;
+ position: absolute;
+top: 0;
+left: 0;
+}
+div.jcarousel-next {
+ background: url("../images/arrow-right.png") no-repeat scroll 0 0 #FFF;
+ position: absolute;
+top: 0;
+right: 5px;
+}
+div.jcarousel-clip-horizontal {
+  margin: 0 30px 0 25px;
+  overflow: hidden;
+  width: 890px;
+}
+div.jcarousel-prev.jcarousel-prev-disabled-horizontal,
+div.jcarousel-next.jcarousel-next-disabled-horizontal {
+  display: none !important;
+}
+
+div.menu-column {
+  width: 190px;
+  border-right: 1px solid #0071B7;
+  min-height: 380px;
+}
+
+div.view-produtos {
+  padding-left: 20px;
+}
+
+div.view-produtos div.views-row {
+  float: left;
+  height: 150px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+div.list-product-column {
+  width: 700px;
+}
+
+div#node-24.node-page h2 {
+  display: none;
+}
+
+div.pane-menu-menu-products-categories ul li.dhtml-menu{
+  list-style-image: url("../images/ondinha-menor.png");
+  font-size: 16px;
+  color: #8C8C8C;
+  line-height: 25px;
+}
+
+div.pane-menu-menu-products-categories ul li.dhtml-menu a {
+  color: #8C8C8C;
+}
+div.pane-menu-menu-products-categories ul li.dhtml-menu a.active {
+  font-weight: bold;
+}
+
+div.pane-menu-menu-products-categories ul li.dhtml-menu ul li {
+  margin: 0 0 0 -8px;
+  padding-left: 0;
+}
+
+body.node-type-produto div.field-type-image {
+  border: 2px solid #CAD9EC;
+}
+
+body.node-type-produto div.pane-node-field-image {
+  float: left;
+  margin: 0 22px 0 35px;
+}
+
+body.node-type-produto div.pane-node-title h2 {
+  background: none;
+  font-size: 12px;
+  color: #8C8C8C;
+  margin:0;
+  padding: 0;
+}
+
+body.node-type-produto div.pane-node-title,
+body.node-type-produto div.pane-node-field-pot-ncia,
+body.node-type-produto div.pane-node-field-dimens-es,
+body.node-type-produto div.pane-node-field-observa-o {
+  width: 310px;
+  float: left;
+  margin: 0 0 10px;
+}
+
+body.node-type-produto div.center-region {
+  width: 750px;
 }
