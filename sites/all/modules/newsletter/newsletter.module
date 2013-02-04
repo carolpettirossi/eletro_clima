@@ -1393,12 +1393,12 @@ function newsletter_subscribe_form_submit($form, &$form_state) {
   }
 
   if (!valid_email_address($mail)) {
-    $msg = t("This e-mail doesn't exist or you have already subscribed");
+    $msg = t("Please, enter a valid email.");
     return $is_ajax ? '<div id="newsletter-error">' . $msg . '</div>' : drupal_set_message($msg, 'warning');
   }
   
   if(newsletter_is_subscribed($mail)) {
-    $msg = t("You have already subscribed");
+    $msg = t("You have already subscribed.");
     return $is_ajax ? '<div id="newsletter-error">' . $msg . '</div>' : drupal_set_message($msg, 'warning');
   }
   
