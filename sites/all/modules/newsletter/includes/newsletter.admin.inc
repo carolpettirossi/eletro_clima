@@ -380,6 +380,7 @@ function newsletter_create_send_form_page_two_submit($form, &$form_state) {
     : newsletter_subscribers_by_list($form_state['page_values'][1]['list']);
   if ($form_state['clicked_button']['#value'] == t('Send newsletter now')) {
     newsletter_queue_custom_newsletter($subscribers, $newsletter);
+    drupal_cron_run();
   }
   else {
     $mail = !empty($form_state['input']['test-email']) ? $form_state['input']['test-email'] : NULL;
@@ -398,7 +399,8 @@ function newsletter_manual_send($list) {
   $remaining[$list->nlid] = TRUE;
   variable_set('newsletter_for_next_cron', $remaining);
 
-  drupal_set_message(t('Newsletter queued for the next cron run'));
+  drupal_set_message(t('Newsletter will be sent soon.'));
+  drupal_cron_run();
   return drupal_goto('admin/config/media/newsletter/create-send');
 }
 
@@ -1646,6 +1648,7 @@ function newsletter_send_draft($nnid) {
   if (isset($drafts[$nnid]) && !empty($drafts[$nnid])) {
     $newsletter = newsletter_newsletter_load($nnid);
     newsletter_queue_custom_newsletter($drafts[$nnid]['subscribers'], $newsletter);
+    drupal_cron_run();
     unset($drafts[$nnid]);
     variable_set('newsletter_custom_drafts', $drafts);
   }

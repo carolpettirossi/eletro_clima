@@ -151,7 +151,7 @@ function newsletter_manage_subscriptions_form_submit($form, &$form_state) {
   if (empty($form_state['values']['uid'])) {
     $subscriber->uid = NULL;
   }
-
+  
   field_attach_submit('newsletter_subscriber', $subscriber, $form, $form_state);
   entity_get_controller('newsletter_subscriber')->save($subscriber, $needs_confirm);
 }

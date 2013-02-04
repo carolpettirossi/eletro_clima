@@ -1379,9 +1379,9 @@ function newsletter_subscribe_form($form, &$form_state) {
  * a colorbox if the module exists.Else simple http redirect.
  */
 function newsletter_subscribe_form_submit($form, &$form_state) {
-
+  
   $is_ajax = isset($form_state['input']['ajax_page_state']);
-
+  
   if (isset($form_state['values']['logged-in'])) {
     global $user;
     $mail = $user->mail;
@@ -1392,20 +1392,34 @@ function newsletter_subscribe_form_submit($form, &$form_state) {
     : '';
   }
 
-  if (!valid_email_address($mail) || newsletter_is_subscribed($mail)) {
+  if (!valid_email_address($mail)) {
     $msg = t("This e-mail doesn't exist or you have already subscribed");
-    return $is_ajax ? '<div id="newsletter-error">' . $msg . '</div>' : drupal_set_message($msg, 'warning');;
+    return $is_ajax ? '<div id="newsletter-error">' . $msg . '</div>' : drupal_set_message($msg, 'warning');
   }
-
+  
+  if(newsletter_is_subscribed($mail)) {
+    $msg = t("You have already subscribed");
+    return $is_ajax ? '<div id="newsletter-error">' . $msg . '</div>' : drupal_set_message($msg, 'warning');
+  }
+  
   $q = array(
     'destination' => '',
     'email' => $mail,
   );
   $colorbox_url = url('colorbox/form/newsletter_manage_subscriptions_form', array('query' => $q));
   $url = url('newsletter/subscribe', array('query' => $q));
+  
+  $subscriber->uid = null;
+  $subscriber->email = $mail;
+  $subscriber->field_newsletter_list = array('und' => array('0' => array('target_id' => '1')));
+  $subscriber->submit = 'Subscribe';
+  $subscriber->form_build_id = 'form-GmepaoV61-crAmqjHjJBEaAoucPjkmOSBY4d5Z2xECU';
+  $subscriber->form_id = 'newsletter_manage_subscriptions_form';
+  $subscriber->op = 'Subscribe';
+
   if ($is_ajax) {
-    return module_exists('colorbox') ?
-      "<script type='text/javascript'>
+    if (module_exists('colorbox')) {
+      return "<script type='text/javascript'>
         (function ($) {
           $.fn.colorbox({
             href: '$colorbox_url',
@@ -1415,10 +1429,13 @@ function newsletter_subscribe_form_submit($form, &$form_state) {
             onComplete: function(){Drupal.behaviors.newsletter.subscribeForm();}
           })
         })(jQuery);
-      </script>" :
-      "<script type='text/javascript'>
-        location.href='$url'
       </script>";
+    }
+    else {
+      entity_get_controller('newsletter_subscriber')->save($subscriber, FALSE);
+      $msg = t('You have successfully subcribed to our Newsletter!');
+      return $is_ajax ? '<div id="newsletter-error">' . $msg . '</div>' : drupal_set_message($msg, 'status');
+    }
   }
   else {
     drupal_goto('newsletter/subscribe', array('query' => $q));
