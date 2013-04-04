@@ -264,7 +264,7 @@ div.footer-row a {
 }
 div.footer-row div.pane-system-main-menu{
   margin: 0 auto;
-  width: 309px;
+  width: 315px;
 }
 div.footer-row div.pane-system-main-menu ul  {
   margin:0;
@@ -500,4 +500,26 @@ body.node-type-produto div.pane-node-field-observa-o {
 
 body.node-type-produto div.center-region {
   width: 750px;
+}
+
+div#parent-category {
+  display: none;
+}
+
+div.field-name-field-categoria {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 5px 33px 10px;
+  display: inline-block;
+  border-bottom: 1px solid;
+  width: 90%;
+  color: #549CB5;
+}
+
+body.page-node-done div.links {
+  display: none;
+}
+
+body.page-node-done a#btn_back {
+  bottom: 0;
 }
